@@ -1,0 +1,5 @@
+${search_text};${expected_suggestion};${search_string}
+chair;chairs office;chairs+office
+table;tablet;tablet
+computer;computers pc;computers+pc
+monitor;monitor 27;monitor+27

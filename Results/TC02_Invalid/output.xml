@@ -1,0 +1,1162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.9.6 on win32)" generated="20210920 20:09:19.239" rpa="false">
+<suite id="s1" name="TC02 search product Invalid" source="E:\4 Trang\RobotPractice\testcases\TC02_search_product_Invalid.robot">
+<test id="s1-t1" name="TC02: Search Product and Verify Invalid Result">
+<kw name="Open browser to page" library="common_keywords" type="setup">
+<arguments>
+<arg>${base_url}</arg>
+</arguments>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20210920 20:09:19.986" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000195B2B659D0&gt;</msg>
+<status status="PASS" starttime="20210920 20:09:19.985" endtime="20210920 20:09:19.986"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>"fasp"=True</arg>
+</arguments>
+<assign>
+<var>${exclude}</var>
+</assign>
+<msg timestamp="20210920 20:09:19.986" level="INFO">${exclude} = {'"fasp"': 'True'}</msg>
+<status status="PASS" starttime="20210920 20:09:19.986" endtime="20210920 20:09:19.986"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>protocol_handler.excluded_schemes=${exclude}</arg>
+</arguments>
+<assign>
+<var>${prefs}</var>
+</assign>
+<msg timestamp="20210920 20:09:19.986" level="INFO">${prefs} = {'protocol_handler.excluded_schemes': {'"fasp"': 'True'}}</msg>
+<status status="PASS" starttime="20210920 20:09:19.986" endtime="20210920 20:09:19.986"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:19.987" endtime="20210920 20:09:19.987"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:19.987" endtime="20210920 20:09:19.987"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+</arguments>
+<msg timestamp="20210920 20:09:19.987" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20210920 20:09:19.987" endtime="20210920 20:09:21.023"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210920 20:09:21.023" endtime="20210920 20:09:21.139"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${speed}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:21.139" endtime="20210920 20:09:21.140"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210920 20:09:21.140" level="INFO">Opening url 'https://www.jd.co.th/'</msg>
+<status status="PASS" starttime="20210920 20:09:21.140" endtime="20210920 20:09:31.653"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:19.985" endtime="20210920 20:09:31.653"></status>
+</kw>
+<kw name="TC02: Search Product and Verify Invalid Result">
+<arguments>
+<arg>++++++</arg>
+<arg>%2B%2B%2B%2B%2B%2B</arg>
+</arguments>
+<kw name="Search Product in Home Page" library="home_page">
+<arguments>
+<arg>${search_text}</arg>
+</arguments>
+<kw name="Close Ad in Home Page" library="home_page">
+<kw name="Click Element" library="common_keywords">
+<arguments>
+<arg>${dictHomePage.adCloseButton}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:31.658" endtime="20210920 20:09:31.915"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210920 20:09:31.915" level="INFO">Clicking element 'xpath=//i[@id="closeBtn"]'.</msg>
+<status status="PASS" starttime="20210920 20:09:31.915" endtime="20210920 20:09:32.180"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:31.656" endtime="20210920 20:09:32.180"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:31.655" endtime="20210920 20:09:32.180"></status>
+</kw>
+<kw name="Verify Home Page is loaded" library="home_page">
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictHomePage.headerLogo}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:32.181" endtime="20210920 20:09:32.294"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:32.294" endtime="20210920 20:09:32.528"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:32.181" endtime="20210920 20:09:32.528"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:32.180" endtime="20210920 20:09:32.528"></status>
+</kw>
+<kw name="Input Search Text" library="home_page">
+<arguments>
+<arg>${search_text}</arg>
+</arguments>
+<kw name="Input data and verify text for web element" library="common_keywords">
+<arguments>
+<arg>${dictHomePage.searchField}</arg>
+<arg>${search_text}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${expect_text}</arg>
+</arguments>
+<msg timestamp="20210920 20:09:32.531" level="INFO">Typing text '++++++' into text field 'xpath=//input[@type="text"]'.</msg>
+<status status="PASS" starttime="20210920 20:09:32.531" endtime="20210920 20:09:32.934"></status>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${real_text}</var>
+</assign>
+<msg timestamp="20210920 20:09:33.146" level="INFO">${real_text} = ++++++</msg>
+<status status="PASS" starttime="20210920 20:09:32.934" endtime="20210920 20:09:33.146"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>'${real_text}'</arg>
+<arg>'${expect_text}'</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:33.146" endtime="20210920 20:09:33.147"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:32.530" endtime="20210920 20:09:33.147"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:32.529" endtime="20210920 20:09:33.147"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:31.655" endtime="20210920 20:09:33.147"></status>
+</kw>
+<kw name="Verify Suggestion Field is not Visible for Invalid searchKey" library="home_page">
+<kw name="Verify Web Element Is Not Visible" library="common_keywords">
+<arguments>
+<arg>${dictHomePage.suggestionField}</arg>
+</arguments>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:33.148" endtime="20210920 20:09:33.258"></status>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:33.258" endtime="20210920 20:09:33.364"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:33.147" endtime="20210920 20:09:33.364"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:33.147" endtime="20210920 20:09:33.364"></status>
+</kw>
+<kw name="Call API get Suggestion List" library="suggestion_api">
+<arguments>
+<arg>${search_string}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>cartUuid</arg>
+</arguments>
+<assign>
+<var>${cartuuid}</var>
+</assign>
+<msg timestamp="20210920 20:09:33.469" level="INFO">${cartuuid} = name=cartUuid
+value=33d5a33b-444a-4d7a-959f-d7c029d0da37
+path=/
+domain=.jd.co.th
+secure=False
+httpOnly=False
+expiry=2021-09-21 20:09:26</msg>
+<status status="PASS" starttime="20210920 20:09:33.365" endtime="20210920 20:09:33.469"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>__jdv</arg>
+</arguments>
+<assign>
+<var>${jdv}</var>
+</assign>
+<msg timestamp="20210920 20:09:33.573" level="INFO">${jdv} = name=__jdv
+value=142230324|direct|-|none|-|1632143369124
+path=/
+domain=.jd.co.th
+secure=False
+httpOnly=False
+expiry=2021-10-05 20:09:29</msg>
+<status status="PASS" starttime="20210920 20:09:33.469" endtime="20210920 20:09:33.573"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>__jdc</arg>
+</arguments>
+<assign>
+<var>${jdc}</var>
+</assign>
+<msg timestamp="20210920 20:09:33.677" level="INFO">${jdc} = name=__jdc
+value=142230324
+path=/
+domain=.jd.co.th
+secure=False
+httpOnly=False
+expiry=None</msg>
+<status status="PASS" starttime="20210920 20:09:33.573" endtime="20210920 20:09:33.677"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>__jda</arg>
+</arguments>
+<assign>
+<var>${jda}</var>
+</assign>
+<msg timestamp="20210920 20:09:33.780" level="INFO">${jda} = name=__jda
+value=142230324.1632143369124895782047.1632143369.1632143369.1632143369.1
+path=/
+domain=.jd.co.th
+secure=False
+httpOnly=False
+expiry=2022-03-19 20:09:29</msg>
+<status status="PASS" starttime="20210920 20:09:33.677" endtime="20210920 20:09:33.780"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>__jdb</arg>
+</arguments>
+<assign>
+<var>${jdb}</var>
+</assign>
+<msg timestamp="20210920 20:09:33.884" level="INFO">${jdb} = name=__jdb
+value=142230324.1.1632143369124895782047|1.1632143369
+path=/
+domain=.jd.co.th
+secure=False
+httpOnly=False
+expiry=2021-09-20 20:39:29</msg>
+<status status="PASS" starttime="20210920 20:09:33.780" endtime="20210920 20:09:33.884"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>accept=application/json, text/plain, */*</arg>
+<arg>accept-encoding=gzip, deflate, br</arg>
+<arg>accept-language=en,en-US;q=0.9,en-GB;q=0.8,de;q=0.7</arg>
+<arg>cookie=cartUuid=${cartuuid.value}; __jdv=${jdv.value}; __jdc=${jdc.value}; __jda=${jda.value}; __jdb=${jdb.value}</arg>
+</arguments>
+<assign>
+<var>&amp;{header}</var>
+</assign>
+<msg timestamp="20210920 20:09:33.885" level="INFO">&amp;{header} = { accept=application/json, text/plain, */* | accept-encoding=gzip, deflate, br | accept-language=en,en-US;q=0.9,en-GB;q=0.8,de;q=0.7 | cookie=cartUuid=33d5a33b-444a-4d7a-959f-d7c029d0da37; __jdv=14223...</msg>
+<status status="PASS" starttime="20210920 20:09:33.884" endtime="20210920 20:09:33.885"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>https://tai-suggest.jd.co.th/?key=${search_string}&amp;terminal=tha_th&amp;callback=_jsonpqbp1e9wv9xr</arg>
+</arguments>
+<assign>
+<var>${end_point}</var>
+</assign>
+<msg timestamp="20210920 20:09:33.885" level="INFO">${end_point} = https://tai-suggest.jd.co.th/?key=%2B%2B%2B%2B%2B%2B&amp;terminal=tha_th&amp;callback=_jsonpqbp1e9wv9xr</msg>
+<status status="PASS" starttime="20210920 20:09:33.885" endtime="20210920 20:09:33.885"></status>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<doc>Sends a GET request.</doc>
+<arguments>
+<arg>url=${end_point}</arg>
+<arg>headers=${header}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210920 20:09:34.631" level="INFO">GET Request : url=https://tai-suggest.jd.co.th/?key=%2B%2B%2B%2B%2B%2B&amp;terminal=tha_th&amp;callback=_jsonpqbp1e9wv9xr 
+ path_url=/?key=%2B%2B%2B%2B%2B%2B&amp;terminal=tha_th&amp;callback=_jsonpqbp1e9wv9xr 
+ headers={'User-Agent': 'python-requests/2.26.0', 'accept-encoding': 'gzip, deflate, br', 'accept': 'application/json, text/plain, */*', 'Connection': 'keep-alive', 'accept-language': 'en,en-US;q=0.9,en-GB;q=0.8,de;q=0.7', 'cookie': 'cartUuid=33d5a33b-444a-4d7a-959f-d7c029d0da37; __jdv=142230324|direct|-|none|-|1632143369124; __jdc=142230324; __jda=142230324.1632143369124895782047.1632143369.1632143369.1632143369.1; __jdb=142230324.1.1632143369124895782047|1.1632143369'} 
+ body=None 
+ </msg>
+<msg timestamp="20210920 20:09:34.632" level="INFO">GET Response : url=https://tai-suggest.jd.co.th/?key=%2B%2B%2B%2B%2B%2B&amp;terminal=tha_th&amp;callback=_jsonpqbp1e9wv9xr 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 20 Sep 2021 13:09:35 GMT', 'Content-Type': 'text/json; charset=UTF-8', 'Content-Length': '38', 'Connection': 'keep-alive', 'Server': 'jfe', 'Strict-Transport-Security': 'max-age=86400'} 
+ body=_jsonpqbp1e9wv9xr([{"version":"new"}]) 
+ </msg>
+<msg timestamp="20210920 20:09:34.632" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210920 20:09:33.885" endtime="20210920 20:09:34.632"></status>
+</kw>
+<msg timestamp="20210920 20:09:34.632" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210920 20:09:33.364" endtime="20210920 20:09:34.632"></status>
+</kw>
+<kw name="Verify API get Suggestion Does Not Contain Invalid Search Key" library="suggestion_api">
+<arguments>
+<arg>${response.text}</arg>
+</arguments>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>"spuId"</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:34.633" endtime="20210920 20:09:34.633"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:34.632" endtime="20210920 20:09:34.633"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:31.654" endtime="20210920 20:09:34.633"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210920 20:09:34.634" endtime="20210920 20:09:36.771"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:19.984" endtime="20210920 20:09:36.771" critical="yes"></status>
+</test>
+<test id="s1-t2" name="TC02: Search Product and Verify Invalid Result">
+<kw name="Open browser to page" library="common_keywords" type="setup">
+<arguments>
+<arg>${base_url}</arg>
+</arguments>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20210920 20:09:36.779" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000195B2BA4130&gt;</msg>
+<status status="PASS" starttime="20210920 20:09:36.778" endtime="20210920 20:09:36.779"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>"fasp"=True</arg>
+</arguments>
+<assign>
+<var>${exclude}</var>
+</assign>
+<msg timestamp="20210920 20:09:36.780" level="INFO">${exclude} = {'"fasp"': 'True'}</msg>
+<status status="PASS" starttime="20210920 20:09:36.779" endtime="20210920 20:09:36.780"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>protocol_handler.excluded_schemes=${exclude}</arg>
+</arguments>
+<assign>
+<var>${prefs}</var>
+</assign>
+<msg timestamp="20210920 20:09:36.781" level="INFO">${prefs} = {'protocol_handler.excluded_schemes': {'"fasp"': 'True'}}</msg>
+<status status="PASS" starttime="20210920 20:09:36.780" endtime="20210920 20:09:36.781"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:36.781" endtime="20210920 20:09:36.782"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:36.782" endtime="20210920 20:09:36.783"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+</arguments>
+<msg timestamp="20210920 20:09:36.784" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20210920 20:09:36.783" endtime="20210920 20:09:37.832"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210920 20:09:37.832" endtime="20210920 20:09:37.943"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${speed}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:37.943" endtime="20210920 20:09:37.944"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210920 20:09:37.945" level="INFO">Opening url 'https://www.jd.co.th/'</msg>
+<status status="PASS" starttime="20210920 20:09:37.944" endtime="20210920 20:09:40.096"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:36.777" endtime="20210920 20:09:40.096"></status>
+</kw>
+<kw name="TC02: Search Product and Verify Invalid Result">
+<arguments>
+<arg>@@@@@@</arg>
+<arg>%40%40%40%40%40%40</arg>
+</arguments>
+<kw name="Search Product in Home Page" library="home_page">
+<arguments>
+<arg>${search_text}</arg>
+</arguments>
+<kw name="Close Ad in Home Page" library="home_page">
+<kw name="Click Element" library="common_keywords">
+<arguments>
+<arg>${dictHomePage.adCloseButton}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:40.101" endtime="20210920 20:09:40.336"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210920 20:09:40.336" level="INFO">Clicking element 'xpath=//i[@id="closeBtn"]'.</msg>
+<status status="PASS" starttime="20210920 20:09:40.336" endtime="20210920 20:09:40.597"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:40.099" endtime="20210920 20:09:40.597"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:40.099" endtime="20210920 20:09:40.597"></status>
+</kw>
+<kw name="Verify Home Page is loaded" library="home_page">
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictHomePage.headerLogo}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:40.598" endtime="20210920 20:09:40.710"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:40.710" endtime="20210920 20:09:40.942"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:40.598" endtime="20210920 20:09:40.942"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:40.597" endtime="20210920 20:09:40.942"></status>
+</kw>
+<kw name="Input Search Text" library="home_page">
+<arguments>
+<arg>${search_text}</arg>
+</arguments>
+<kw name="Input data and verify text for web element" library="common_keywords">
+<arguments>
+<arg>${dictHomePage.searchField}</arg>
+<arg>${search_text}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${expect_text}</arg>
+</arguments>
+<msg timestamp="20210920 20:09:40.946" level="INFO">Typing text '@@@@@@' into text field 'xpath=//input[@type="text"]'.</msg>
+<status status="PASS" starttime="20210920 20:09:40.945" endtime="20210920 20:09:41.376"></status>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${real_text}</var>
+</assign>
+<msg timestamp="20210920 20:09:41.596" level="INFO">${real_text} = @@@@@@</msg>
+<status status="PASS" starttime="20210920 20:09:41.376" endtime="20210920 20:09:41.596"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>'${real_text}'</arg>
+<arg>'${expect_text}'</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:41.596" endtime="20210920 20:09:41.597"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:40.944" endtime="20210920 20:09:41.597"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:40.943" endtime="20210920 20:09:41.598"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:40.098" endtime="20210920 20:09:41.598"></status>
+</kw>
+<kw name="Verify Suggestion Field is not Visible for Invalid searchKey" library="home_page">
+<kw name="Verify Web Element Is Not Visible" library="common_keywords">
+<arguments>
+<arg>${dictHomePage.suggestionField}</arg>
+</arguments>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:41.600" endtime="20210920 20:09:41.721"></status>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:41.721" endtime="20210920 20:09:41.836"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:41.599" endtime="20210920 20:09:41.836"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:41.598" endtime="20210920 20:09:41.836"></status>
+</kw>
+<kw name="Call API get Suggestion List" library="suggestion_api">
+<arguments>
+<arg>${search_string}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>cartUuid</arg>
+</arguments>
+<assign>
+<var>${cartuuid}</var>
+</assign>
+<msg timestamp="20210920 20:09:41.941" level="INFO">${cartuuid} = name=cartUuid
+value=3a5a33f1-5865-404c-966a-ac638b9d5ee7
+path=/
+domain=.jd.co.th
+secure=False
+httpOnly=False
+expiry=2021-09-21 20:09:38</msg>
+<status status="PASS" starttime="20210920 20:09:41.837" endtime="20210920 20:09:41.941"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>__jdv</arg>
+</arguments>
+<assign>
+<var>${jdv}</var>
+</assign>
+<msg timestamp="20210920 20:09:42.047" level="INFO">${jdv} = name=__jdv
+value=142230324|direct|-|none|-|1632143378804
+path=/
+domain=.jd.co.th
+secure=False
+httpOnly=False
+expiry=2021-10-05 20:09:38</msg>
+<status status="PASS" starttime="20210920 20:09:41.942" endtime="20210920 20:09:42.047"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>__jdc</arg>
+</arguments>
+<assign>
+<var>${jdc}</var>
+</assign>
+<msg timestamp="20210920 20:09:42.153" level="INFO">${jdc} = name=__jdc
+value=142230324
+path=/
+domain=.jd.co.th
+secure=False
+httpOnly=False
+expiry=None</msg>
+<status status="PASS" starttime="20210920 20:09:42.047" endtime="20210920 20:09:42.153"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>__jda</arg>
+</arguments>
+<assign>
+<var>${jda}</var>
+</assign>
+<msg timestamp="20210920 20:09:42.259" level="INFO">${jda} = name=__jda
+value=142230324.16321433788031373359467.1632143379.1632143379.1632143379.1
+path=/
+domain=.jd.co.th
+secure=False
+httpOnly=False
+expiry=2022-03-19 20:09:38</msg>
+<status status="PASS" starttime="20210920 20:09:42.153" endtime="20210920 20:09:42.259"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>__jdb</arg>
+</arguments>
+<assign>
+<var>${jdb}</var>
+</assign>
+<msg timestamp="20210920 20:09:42.364" level="INFO">${jdb} = name=__jdb
+value=142230324.1.16321433788031373359467|1.1632143379
+path=/
+domain=.jd.co.th
+secure=False
+httpOnly=False
+expiry=2021-09-20 20:39:38</msg>
+<status status="PASS" starttime="20210920 20:09:42.259" endtime="20210920 20:09:42.364"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>accept=application/json, text/plain, */*</arg>
+<arg>accept-encoding=gzip, deflate, br</arg>
+<arg>accept-language=en,en-US;q=0.9,en-GB;q=0.8,de;q=0.7</arg>
+<arg>cookie=cartUuid=${cartuuid.value}; __jdv=${jdv.value}; __jdc=${jdc.value}; __jda=${jda.value}; __jdb=${jdb.value}</arg>
+</arguments>
+<assign>
+<var>&amp;{header}</var>
+</assign>
+<msg timestamp="20210920 20:09:42.365" level="INFO">&amp;{header} = { accept=application/json, text/plain, */* | accept-encoding=gzip, deflate, br | accept-language=en,en-US;q=0.9,en-GB;q=0.8,de;q=0.7 | cookie=cartUuid=3a5a33f1-5865-404c-966a-ac638b9d5ee7; __jdv=14223...</msg>
+<status status="PASS" starttime="20210920 20:09:42.364" endtime="20210920 20:09:42.365"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>https://tai-suggest.jd.co.th/?key=${search_string}&amp;terminal=tha_th&amp;callback=_jsonpqbp1e9wv9xr</arg>
+</arguments>
+<assign>
+<var>${end_point}</var>
+</assign>
+<msg timestamp="20210920 20:09:42.365" level="INFO">${end_point} = https://tai-suggest.jd.co.th/?key=%40%40%40%40%40%40&amp;terminal=tha_th&amp;callback=_jsonpqbp1e9wv9xr</msg>
+<status status="PASS" starttime="20210920 20:09:42.365" endtime="20210920 20:09:42.365"></status>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<doc>Sends a GET request.</doc>
+<arguments>
+<arg>url=${end_point}</arg>
+<arg>headers=${header}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210920 20:09:42.555" level="INFO">GET Request : url=https://tai-suggest.jd.co.th/?key=%40%40%40%40%40%40&amp;terminal=tha_th&amp;callback=_jsonpqbp1e9wv9xr 
+ path_url=/?key=%40%40%40%40%40%40&amp;terminal=tha_th&amp;callback=_jsonpqbp1e9wv9xr 
+ headers={'User-Agent': 'python-requests/2.26.0', 'accept-encoding': 'gzip, deflate, br', 'accept': 'application/json, text/plain, */*', 'Connection': 'keep-alive', 'accept-language': 'en,en-US;q=0.9,en-GB;q=0.8,de;q=0.7', 'cookie': 'cartUuid=3a5a33f1-5865-404c-966a-ac638b9d5ee7; __jdv=142230324|direct|-|none|-|1632143378804; __jdc=142230324; __jda=142230324.16321433788031373359467.1632143379.1632143379.1632143379.1; __jdb=142230324.1.16321433788031373359467|1.1632143379'} 
+ body=None 
+ </msg>
+<msg timestamp="20210920 20:09:42.555" level="INFO">GET Response : url=https://tai-suggest.jd.co.th/?key=%40%40%40%40%40%40&amp;terminal=tha_th&amp;callback=_jsonpqbp1e9wv9xr 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 20 Sep 2021 13:09:42 GMT', 'Content-Type': 'text/json; charset=UTF-8', 'Content-Length': '38', 'Connection': 'keep-alive', 'Server': 'jfe', 'Strict-Transport-Security': 'max-age=86400'} 
+ body=_jsonpqbp1e9wv9xr([{"version":"new"}]) 
+ </msg>
+<msg timestamp="20210920 20:09:42.556" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210920 20:09:42.365" endtime="20210920 20:09:42.556"></status>
+</kw>
+<msg timestamp="20210920 20:09:42.556" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210920 20:09:41.836" endtime="20210920 20:09:42.556"></status>
+</kw>
+<kw name="Verify API get Suggestion Does Not Contain Invalid Search Key" library="suggestion_api">
+<arguments>
+<arg>${response.text}</arg>
+</arguments>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>"spuId"</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:42.557" endtime="20210920 20:09:42.557"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:42.556" endtime="20210920 20:09:42.557"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:40.097" endtime="20210920 20:09:42.557"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210920 20:09:42.558" endtime="20210920 20:09:44.693"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:36.774" endtime="20210920 20:09:44.694" critical="yes"></status>
+</test>
+<test id="s1-t3" name="TC02: Search Product and Verify Invalid Result">
+<kw name="Open browser to page" library="common_keywords" type="setup">
+<arguments>
+<arg>${base_url}</arg>
+</arguments>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20210920 20:09:44.700" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000195B2BAD8E0&gt;</msg>
+<status status="PASS" starttime="20210920 20:09:44.699" endtime="20210920 20:09:44.700"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>"fasp"=True</arg>
+</arguments>
+<assign>
+<var>${exclude}</var>
+</assign>
+<msg timestamp="20210920 20:09:44.701" level="INFO">${exclude} = {'"fasp"': 'True'}</msg>
+<status status="PASS" starttime="20210920 20:09:44.700" endtime="20210920 20:09:44.701"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>protocol_handler.excluded_schemes=${exclude}</arg>
+</arguments>
+<assign>
+<var>${prefs}</var>
+</assign>
+<msg timestamp="20210920 20:09:44.702" level="INFO">${prefs} = {'protocol_handler.excluded_schemes': {'"fasp"': 'True'}}</msg>
+<status status="PASS" starttime="20210920 20:09:44.701" endtime="20210920 20:09:44.702"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:44.702" endtime="20210920 20:09:44.703"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:44.703" endtime="20210920 20:09:44.704"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+</arguments>
+<msg timestamp="20210920 20:09:44.705" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20210920 20:09:44.704" endtime="20210920 20:09:45.738"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210920 20:09:45.738" endtime="20210920 20:09:45.848"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${speed}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:45.848" endtime="20210920 20:09:45.849"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210920 20:09:45.849" level="INFO">Opening url 'https://www.jd.co.th/'</msg>
+<status status="PASS" starttime="20210920 20:09:45.849" endtime="20210920 20:09:47.845"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:44.698" endtime="20210920 20:09:47.845"></status>
+</kw>
+<kw name="TC02: Search Product and Verify Invalid Result">
+<arguments>
+<arg>------</arg>
+<arg>------</arg>
+</arguments>
+<kw name="Search Product in Home Page" library="home_page">
+<arguments>
+<arg>${search_text}</arg>
+</arguments>
+<kw name="Close Ad in Home Page" library="home_page">
+<kw name="Click Element" library="common_keywords">
+<arguments>
+<arg>${dictHomePage.adCloseButton}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:47.847" endtime="20210920 20:09:48.083"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<msg timestamp="20210920 20:09:48.083" level="INFO">Clicking element 'xpath=//i[@id="closeBtn"]'.</msg>
+<status status="PASS" starttime="20210920 20:09:48.083" endtime="20210920 20:09:48.368"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:47.846" endtime="20210920 20:09:48.368"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:47.846" endtime="20210920 20:09:48.368"></status>
+</kw>
+<kw name="Verify Home Page is loaded" library="home_page">
+<kw name="Verify Web Element Is Visible" library="common_keywords">
+<arguments>
+<arg>${dictHomePage.headerLogo}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:48.369" endtime="20210920 20:09:48.482"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:48.482" endtime="20210920 20:09:48.711"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:48.368" endtime="20210920 20:09:48.711"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:48.368" endtime="20210920 20:09:48.711"></status>
+</kw>
+<kw name="Input Search Text" library="home_page">
+<arguments>
+<arg>${search_text}</arg>
+</arguments>
+<kw name="Input data and verify text for web element" library="common_keywords">
+<arguments>
+<arg>${dictHomePage.searchField}</arg>
+<arg>${search_text}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>${expect_text}</arg>
+</arguments>
+<msg timestamp="20210920 20:09:48.714" level="INFO">Typing text '------' into text field 'xpath=//input[@type="text"]'.</msg>
+<status status="PASS" starttime="20210920 20:09:48.714" endtime="20210920 20:09:49.163"></status>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${locator}</arg>
+</arguments>
+<assign>
+<var>${real_text}</var>
+</assign>
+<msg timestamp="20210920 20:09:49.390" level="INFO">${real_text} = ------</msg>
+<status status="PASS" starttime="20210920 20:09:49.163" endtime="20210920 20:09:49.390"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>'${real_text}'</arg>
+<arg>'${expect_text}'</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:49.390" endtime="20210920 20:09:49.391"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:48.713" endtime="20210920 20:09:49.391"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:48.712" endtime="20210920 20:09:49.392"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:47.846" endtime="20210920 20:09:49.392"></status>
+</kw>
+<kw name="Verify Suggestion Field is not Visible for Invalid searchKey" library="home_page">
+<kw name="Verify Web Element Is Not Visible" library="common_keywords">
+<arguments>
+<arg>${dictHomePage.suggestionField}</arg>
+</arguments>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:49.394" endtime="20210920 20:09:49.515"></status>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<arguments>
+<arg>${locator}</arg>
+<arg>timeout=${GLOBALTIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:49.515" endtime="20210920 20:09:49.625"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:49.393" endtime="20210920 20:09:49.625"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:49.392" endtime="20210920 20:09:49.625"></status>
+</kw>
+<kw name="Call API get Suggestion List" library="suggestion_api">
+<arguments>
+<arg>${search_string}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>cartUuid</arg>
+</arguments>
+<assign>
+<var>${cartuuid}</var>
+</assign>
+<msg timestamp="20210920 20:09:49.730" level="INFO">${cartuuid} = name=cartUuid
+value=d3228cd1-0550-42ec-85f9-7b45bb367012
+path=/
+domain=.jd.co.th
+secure=False
+httpOnly=False
+expiry=2021-09-21 20:09:46</msg>
+<status status="PASS" starttime="20210920 20:09:49.626" endtime="20210920 20:09:49.730"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>__jdv</arg>
+</arguments>
+<assign>
+<var>${jdv}</var>
+</assign>
+<msg timestamp="20210920 20:09:49.834" level="INFO">${jdv} = name=__jdv
+value=142230324|direct|-|none|-|1632143386629
+path=/
+domain=.jd.co.th
+secure=False
+httpOnly=False
+expiry=2021-10-05 20:09:46</msg>
+<status status="PASS" starttime="20210920 20:09:49.730" endtime="20210920 20:09:49.834"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>__jdc</arg>
+</arguments>
+<assign>
+<var>${jdc}</var>
+</assign>
+<msg timestamp="20210920 20:09:49.940" level="INFO">${jdc} = name=__jdc
+value=142230324
+path=/
+domain=.jd.co.th
+secure=False
+httpOnly=False
+expiry=None</msg>
+<status status="PASS" starttime="20210920 20:09:49.834" endtime="20210920 20:09:49.940"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>__jda</arg>
+</arguments>
+<assign>
+<var>${jda}</var>
+</assign>
+<msg timestamp="20210920 20:09:50.045" level="INFO">${jda} = name=__jda
+value=142230324.16321433866291390262979.1632143387.1632143387.1632143387.1
+path=/
+domain=.jd.co.th
+secure=False
+httpOnly=False
+expiry=2022-03-19 20:09:46</msg>
+<status status="PASS" starttime="20210920 20:09:49.940" endtime="20210920 20:09:50.045"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>__jdb</arg>
+</arguments>
+<assign>
+<var>${jdb}</var>
+</assign>
+<msg timestamp="20210920 20:09:50.149" level="INFO">${jdb} = name=__jdb
+value=142230324.1.16321433866291390262979|1.1632143387
+path=/
+domain=.jd.co.th
+secure=False
+httpOnly=False
+expiry=2021-09-20 20:39:46</msg>
+<status status="PASS" starttime="20210920 20:09:50.045" endtime="20210920 20:09:50.149"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>accept=application/json, text/plain, */*</arg>
+<arg>accept-encoding=gzip, deflate, br</arg>
+<arg>accept-language=en,en-US;q=0.9,en-GB;q=0.8,de;q=0.7</arg>
+<arg>cookie=cartUuid=${cartuuid.value}; __jdv=${jdv.value}; __jdc=${jdc.value}; __jda=${jda.value}; __jdb=${jdb.value}</arg>
+</arguments>
+<assign>
+<var>&amp;{header}</var>
+</assign>
+<msg timestamp="20210920 20:09:50.150" level="INFO">&amp;{header} = { accept=application/json, text/plain, */* | accept-encoding=gzip, deflate, br | accept-language=en,en-US;q=0.9,en-GB;q=0.8,de;q=0.7 | cookie=cartUuid=d3228cd1-0550-42ec-85f9-7b45bb367012; __jdv=14223...</msg>
+<status status="PASS" starttime="20210920 20:09:50.149" endtime="20210920 20:09:50.150"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>https://tai-suggest.jd.co.th/?key=${search_string}&amp;terminal=tha_th&amp;callback=_jsonpqbp1e9wv9xr</arg>
+</arguments>
+<assign>
+<var>${end_point}</var>
+</assign>
+<msg timestamp="20210920 20:09:50.150" level="INFO">${end_point} = https://tai-suggest.jd.co.th/?key=------&amp;terminal=tha_th&amp;callback=_jsonpqbp1e9wv9xr</msg>
+<status status="PASS" starttime="20210920 20:09:50.150" endtime="20210920 20:09:50.150"></status>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<doc>Sends a GET request.</doc>
+<arguments>
+<arg>url=${end_point}</arg>
+<arg>headers=${header}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210920 20:09:50.341" level="INFO">GET Request : url=https://tai-suggest.jd.co.th/?key=------&amp;terminal=tha_th&amp;callback=_jsonpqbp1e9wv9xr 
+ path_url=/?key=------&amp;terminal=tha_th&amp;callback=_jsonpqbp1e9wv9xr 
+ headers={'User-Agent': 'python-requests/2.26.0', 'accept-encoding': 'gzip, deflate, br', 'accept': 'application/json, text/plain, */*', 'Connection': 'keep-alive', 'accept-language': 'en,en-US;q=0.9,en-GB;q=0.8,de;q=0.7', 'cookie': 'cartUuid=d3228cd1-0550-42ec-85f9-7b45bb367012; __jdv=142230324|direct|-|none|-|1632143386629; __jdc=142230324; __jda=142230324.16321433866291390262979.1632143387.1632143387.1632143387.1; __jdb=142230324.1.16321433866291390262979|1.1632143387'} 
+ body=None 
+ </msg>
+<msg timestamp="20210920 20:09:50.341" level="INFO">GET Response : url=https://tai-suggest.jd.co.th/?key=------&amp;terminal=tha_th&amp;callback=_jsonpqbp1e9wv9xr 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 20 Sep 2021 13:09:50 GMT', 'Content-Type': 'text/json; charset=UTF-8', 'Content-Length': '38', 'Connection': 'keep-alive', 'Server': 'jfe', 'Strict-Transport-Security': 'max-age=86400'} 
+ body=_jsonpqbp1e9wv9xr([{"version":"new"}]) 
+ </msg>
+<msg timestamp="20210920 20:09:50.341" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210920 20:09:50.150" endtime="20210920 20:09:50.341"></status>
+</kw>
+<msg timestamp="20210920 20:09:50.342" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210920 20:09:49.625" endtime="20210920 20:09:50.342"></status>
+</kw>
+<kw name="Verify API get Suggestion Does Not Contain Invalid Search Key" library="suggestion_api">
+<arguments>
+<arg>${response.text}</arg>
+</arguments>
+<kw name="Should Not Contain" library="BuiltIn">
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>"spuId"</arg>
+</arguments>
+<status status="PASS" starttime="20210920 20:09:50.342" endtime="20210920 20:09:50.342"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:50.342" endtime="20210920 20:09:50.343"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:47.845" endtime="20210920 20:09:50.343"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210920 20:09:50.343" endtime="20210920 20:09:52.482"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:44.696" endtime="20210920 20:09:52.482" critical="yes"></status>
+</test>
+<kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210920 20:09:52.485" endtime="20210920 20:09:52.485"></status>
+</kw>
+<status status="PASS" starttime="20210920 20:09:19.241" endtime="20210920 20:09:52.485"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0">Critical Tests</stat>
+<stat pass="3" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" id="s1" name="TC02 search product Invalid">TC02 search product Invalid</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210920 20:09:36.774" level="WARN">Multiple test cases with name 'TC02: Search Product and Verify Invalid Result' executed in test suite 'TC02 search product Invalid'.</msg>
+<msg timestamp="20210920 20:09:44.695" level="WARN">Multiple test cases with name 'TC02: Search Product and Verify Invalid Result' executed in test suite 'TC02 search product Invalid'.</msg>
+</errors>
+</robot>
