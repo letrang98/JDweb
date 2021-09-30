@@ -1,0 +1,9 @@
+device_info:
+  trangltt_device:
+    deviceName: 988a1b364b49464d55
+    platformName: android
+    platformVersion: '9'
+    app: C:/Users/Public/CDS_APP/CDS.apk
+    newCommandTimeout: 300
+    noReset: False
+    autoGrantPermissions: True
